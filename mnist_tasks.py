@@ -1,5 +1,5 @@
 # DivHacks 2018 IBM Challenge. 
-# Yuxuan Mei. 
+# Yuxuan Mei - Bluefish
 # 2018.4.14
 
 from sklearn.cross_validation import train_test_split
@@ -115,6 +115,7 @@ def cross_val_knn():
 	plt.savefig('cross_val.png')
 
 def binary_classification():
+	''' do the classification task and report results '''
 	knn = KNeighborsClassifier(n_neighbors=1)
 	
 	dataset_train = pd.read_csv(train_fout, sep=',')

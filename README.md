@@ -44,6 +44,11 @@ Test accuracy: 0.9907.
 
 I'm a little surprised that k is actually 1 for this data set. I want to think more about this. 
 
+### How to use the program
+It's called mnist_tasks.py. Note that you need to have matplotlib, numpy, scipy and sklearn  installed. 
+Go to the main() method and uncomment the parts that you want to run. Then do:
+>python3 mnist_tasks.py
+
 ### Reference:
 
 https://kevinzakka.github.io/2016/07/13/k-nearest-neighbor/
