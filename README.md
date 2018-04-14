@@ -10,17 +10,15 @@ I wrote some python to read in the csv files and calculate the labels with a har
 
 They are test_label.csv and train_label.csv. 
 
-
-
 - Explore the dataset and report your findings using either data or plots to answer the following question: among 0 – 9, which digits are easier to predict than others? What could be the reasons in your opinion?
 
 I counted the number of HARD labels and the total for each digit, and plot them in a histogram. It seems that for the training set, the hardest is 8, while the easiest is 0; for the test set, the hardest is 5, while the easiest is 1. 
 
-Train: ![train_hist](/Users/Bluefish_/divhacks/divhacks-2018-ibm-challenge/train_hist.png)
+Train: ![train_hist](train_hist.png)
 
-Test:![test_hist](/Users/Bluefish_/divhacks/divhacks-2018-ibm-challenge/test_hist.png)
+Test:![test_hist](test_hist.png)
 
-Total:![total_hist](/Users/Bluefish_/divhacks/divhacks-2018-ibm-challenge/total_hist.png)
+Total:![total_hist](total_hist.png)
 
 If we look at the argsort() result, for training: [0 1 6 7 4 3 2 9 5 8]
 
@@ -32,13 +30,11 @@ So it seems that in these data sets, 1, 0, 6 are consistently easier to predict,
 
 One possibly reason for that could be the easiness of strokes, or the simpleness of shapes. There could be many ways to write digits, and when there are more twists in a digit, the # of ways also increase. 
 
-
-
 - Design and implement a binary classifier (EASY or HARD) for all MNIST training data using the above so-obtained labeled data -- while using the 10K test data for testing. Please report your *training* and *test* accuracy. Please remember to set aside some the *validation* data from your *training* data to tune your classifier as needed (a.k.a *cross validation*). Please do NOT use your *test* data set to tune your classifier. You should only report your final results using the *test* data set, and use that *test* data set **ONCE**. If you're hazy about the differences between *training*, *validation*and *test* datasets and their purpose for machine learning, please ask one of the technical mentors for clarification, or read at least this [Overstack article](https://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set).
 
 Nearest neighbor is one of my favorite classification algorithm, so I just used the KNN from scikit learn and cross validated to get the optimal number of neighbors is 1. 
 
-![cross_val](/Users/Bluefish_/divhacks/divhacks-2018-ibm-challenge/cross_val.png)
+![cross_val](cross_val.png)
 
 With k=1, 
 
@@ -47,3 +43,8 @@ Training accuracy: 1.0
 Test accuracy: 0.9907.
 
 I'm a little surprised that k is actually 1 for this data set. I want to think more about this. 
+
+### Reference:
+
+https://kevinzakka.github.io/2016/07/13/k-nearest-neighbor/
+http://scikit-learn.org/stable/documentation.html
